@@ -11,3 +11,5 @@ CREATE TABLE noticias (
     descripcion VARCHAR (500) NOT NULL,
      FOREIGN KEY (id_periodista) REFERENCES periodistas(id)
 );
+
+ALTER TABLE noticias ADD contenido varchar(5000);
