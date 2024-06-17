@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de noticias</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Lista de noticias</h1>
+        {% for noticia in noticias %}
+            <div class="noticia">
+                <hr>
+                <div class="title">{{ noticia.titulo }}</div>
+                <div class="description">{{ noticia.descripcion }}</div>
+                <div class="content">
+                    <p>{{ noticia.contenido }}</p>
+                </div>
+                <div class="video-container">
+                    <iframe width="560" height="315"
+                        src="https://www.youtube.com/embed/{{ noticia.id_video }}"
+                        title="{{ noticia.titulo_video }}" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
